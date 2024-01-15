@@ -37,7 +37,7 @@ jobs:
           # Options
           user: joshua-tianci
           template: classic
-          base: activity, community
+          base: activity
   calendar:
     runs-on: ubuntu-latest
     environment: 
