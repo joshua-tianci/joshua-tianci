@@ -69,6 +69,7 @@ jobs:
           template: classic
           base: ""
           plugin_followup: yes
+          plugin_followup_sections: user,repositories
           plugin_languages: yes
           repositories_affiliations: owner,organization_member
   lines:
