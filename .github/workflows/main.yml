@@ -47,10 +47,12 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.calendar.svg
+          filename: iso_calender.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          template: classic
           base: ""
-          plugin_calendar: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
   pr-lang:
     runs-on: ubuntu-latest
     environment: 
@@ -66,7 +68,20 @@ jobs:
           # Options
           template: classic
           base: ""
+          base_indepth: yes
           plugin_followup: yes
           plugin_languages: yes
-
-
+          plugin_languages_indepth_custom: kyndio
+  lines:
+    runs-on: ubuntu-latest
+    environment: 
+      name: production
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: lines_of_code.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: "repositories"
+          plugin_lines: yes
